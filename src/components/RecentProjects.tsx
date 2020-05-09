@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { themeLight, dimensions } from "../styles/variables";
-import { Link, StaticQuery, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 interface ProjectInfo {
   title: string;
@@ -61,10 +61,10 @@ const StyledProjectLink = styled.div`
 `;
 
 interface StaticQueryProps {
-  allContentfulProjectEntry: {
+  allContentfulProjectType: {
     edges: [
       {
-        node: ProjectEntry;
+        node: ProjectType;
       },
     ];
   };
@@ -74,7 +74,7 @@ const ProjectLinks: React.FC = () => {
   const data: StaticQueryProps = useStaticQuery(
     graphql`
       query ProjectLinksQuery {
-        allContentfulProjectEntry(limit: 1000, filter: { parentProject: { slug: { eq: "ration-drive" } } }) {
+        allContentfulProjectType(limit: 1000, filter: { parentProject: { slug: { eq: "ration-drive" } } }) {
           edges {
             node {
               slug
@@ -92,7 +92,7 @@ const ProjectLinks: React.FC = () => {
   );
 
   const projects: ProjectInfo[] = [];
-  for (const { node } of data.allContentfulProjectEntry.edges) {
+  for (const { node } of data.allContentfulProjectType.edges) {
     if (node.status.toLowerCase() !== "active") {
       continue;
     }
@@ -109,7 +109,7 @@ const ProjectLinks: React.FC = () => {
     renderedProjectInfos.push(
       <StyleProjectInfo key={project.slug}>
         <StyledProjectDate>{/*project.date.toDateString()*/}</StyledProjectDate>
-        <Link to={"/projectentry/" + project.slug}>
+        <Link to={"/projecttype/" + project.slug}>
           <StyledProjectLink>{project.title}</StyledProjectLink>
         </Link>
       </StyleProjectInfo>,

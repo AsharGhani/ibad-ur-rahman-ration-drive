@@ -78,12 +78,17 @@ const ProjectTitleBreadCrump: React.FC<ProjectTitleBreadCrumpProps> = function(p
   const breadCrumbEntries = [];
   breadCrumbEntries.push(createBreadCrumbEntry("Home", "/"));
 
+  let breadCrumbProjects = [];
   let parentProject = props.parent;
   while (parentProject) {
     const link = "/projecttype/" + parentProject.slug;
-    breadCrumbEntries.push(createBreadCrumbEntry(parentProject.title, link));
+    breadCrumbProjects.push(createBreadCrumbEntry(parentProject.title, link));
     parentProject = parentProject.parentProject;
   }
+
+  breadCrumbProjects = breadCrumbProjects.reverse();
+
+  breadCrumbEntries.push(...breadCrumbProjects);
 
   return (
     <StyledTitleContainerDiv>

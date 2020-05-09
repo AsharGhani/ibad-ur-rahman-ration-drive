@@ -134,10 +134,10 @@ const MenuItemLink = styled(Link)`
 `;
 
 interface StaticQueryProps {
-  allContentfulProjectEntry: {
+  allContentfulProjectType: {
     edges: [
       {
-        node: ProjectEntry;
+        node: ProjectType;
       },
     ];
   };
@@ -146,8 +146,8 @@ interface StaticQueryProps {
 const Navbar: React.FC = () => (
   <StaticQuery
     query={graphql`
-      query NavbarAllProjectEntryQuery {
-        allContentfulProjectEntry(limit: 1000, filter: { parentProject: { slug: { eq: "ration-drive" } } }) {
+      query NavbarAllProjectTypeQuery {
+        allContentfulProjectType(limit: 1000, filter: { parentProject: { slug: { eq: "ration-drive" } } }) {
           edges {
             node {
               slug
@@ -162,10 +162,10 @@ const Navbar: React.FC = () => (
     `}
     render={(data: StaticQueryProps) => {
       const projectsSubMenuLinks: React.ReactNode[] = [];
-      for (const { node } of data.allContentfulProjectEntry.edges) {
+      for (const { node } of data.allContentfulProjectType.edges) {
         projectsSubMenuLinks.push(
           <SubMenuItem key={node.slug}>
-            <MenuItemLink to={"/projectentry/" + node.slug} activeClassName="menu-link-active">
+            <MenuItemLink to={"/projecttype/" + node.slug} activeClassName="menu-link-active">
               {node.title}
             </MenuItemLink>
           </SubMenuItem>,

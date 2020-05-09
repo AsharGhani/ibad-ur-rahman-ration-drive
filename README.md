@@ -40,7 +40,7 @@ Built with [Gatsby](https://www.gatsbyjs.org/) - the blazing-fast static site ge
 
 ## Deploy
 
-Deployed to github pages at [Ibad - Ur - Rahman](https://asharghani.github.io/chairty-site/)
+Deployed to github pages at [Ibad - Ur - Rahman](https://asharghani.github.io/ibad-ur-rahman-ration-drive/)
 
 <!--
 # [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/asharghani/charity-site -->

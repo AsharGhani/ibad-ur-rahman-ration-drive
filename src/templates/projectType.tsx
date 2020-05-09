@@ -8,6 +8,7 @@ import PictureCard from "../components/PictureCard";
 import ProjectTitleBreadCrump from "../components/ProjectTitleBreadCrumb";
 import { getEmSize } from "../styles/mixins";
 import { widths, breakpoints } from "../styles/variables";
+import UpdateCard from "../components/UpdateCard";
 
 const xl = `@media (min-width: ${getEmSize(breakpoints.xl)}em)`;
 
@@ -59,21 +60,45 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   }
 
   if (projectType.childProjectsList) {
-    for (const childProjectEntry of projectType.childProjectsList) {
+    const sortedProjectsList = projectType.childProjectsList.sort((projectA, projectB) =>
+      projectA.startDate < projectB.startDate ? 1 : -1,
+    );
+
+    for (const childProjectEntry of sortedProjectsList) {
       let link: string | undefined;
       if (childProjectEntry.layout !== "NoPage") {
         link = "/projectentry/" + childProjectEntry.slug;
       }
-      childProjectEntryCards.push(
-        <PictureCard
-          title={childProjectEntry.title}
-          description={childProjectEntry.description && childProjectEntry.description.childMarkdownRemark.internal.content}
-          imageSrc={childProjectEntry.featureImage && childProjectEntry.featureImage.fluid.src}
-          imageTitle={childProjectEntry.featureImage && childProjectEntry.featureImage.title}
-          link={link}
-          key={childProjectEntry.slug}
-        ></PictureCard>,
-      );
+
+      let entryCard: React.ReactNode;
+
+      if (projectType.layout && projectType.layout === "UpdatesList") {
+        const dateValue = childProjectEntry.startDate ? new Date(childProjectEntry.startDate) : undefined;
+        entryCard = (
+          <UpdateCard
+            title={childProjectEntry.title}
+            description={childProjectEntry.description && childProjectEntry.description.childMarkdownRemark.internal.content}
+            imageSrc={childProjectEntry.featureImage && childProjectEntry.featureImage.fluid.src}
+            imageTitle={childProjectEntry.featureImage && childProjectEntry.featureImage.title}
+            link={link}
+            date={dateValue}
+            key={childProjectEntry.slug}
+          ></UpdateCard>
+        );
+      } else {
+        entryCard = (
+          <PictureCard
+            title={childProjectEntry.title}
+            description={childProjectEntry.description && childProjectEntry.description.childMarkdownRemark.internal.content}
+            imageSrc={childProjectEntry.featureImage && childProjectEntry.featureImage.fluid.src}
+            imageTitle={childProjectEntry.featureImage && childProjectEntry.featureImage.title}
+            link={link}
+            key={childProjectEntry.slug}
+          ></PictureCard>
+        );
+      }
+
+      childProjectEntryCards.push(entryCard);
     }
   }
 
@@ -105,6 +130,8 @@ export const query = graphql`
     contentfulProjectType(slug: { eq: $slug }) {
       slug
       title
+      startDate
+      layout
       parentProject {
         slug
         parentProject {
@@ -121,6 +148,7 @@ export const query = graphql`
         slug
         title
         layout
+        startDate
         featureImage {
           fluid {
             src
@@ -144,6 +172,7 @@ export const query = graphql`
       childProjectTypes {
         slug
         title
+        startDate
         description {
           childMarkdownRemark {
             html
