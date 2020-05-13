@@ -4,7 +4,7 @@ import { getEmSize } from "../styles/mixins";
 
 import Page from "../components/Page";
 import IndexLayout from "../layouts";
-import SlideShow from "../components/Slideshow";
+import SlideShow from "../components/SlideShow";
 import styled from "@emotion/styled";
 import css from "@emotion/core";
 import RecentProjects from "../components/RecentProjects";
