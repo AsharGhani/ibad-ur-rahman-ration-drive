@@ -1,7 +1,7 @@
-# Ibad ur Rahman Fooundation - Ration Drive
+# Ibaad ur Rahman Fooundation - Ration Drive
 
-> A site for the charity organization "Ibad ur Rahmand Foundation" that provides services for clean water, poverty alleviation
-> health care, Marriage Support, Education, Food. This version of the site focuses on the ration drive by Ibad ur Rahman
+> A site for the charity organization "Ibaad ur Rahmand Foundation" that provides services for clean water, poverty alleviation
+> health care, Marriage Support, Education, Food. This version of the site focuses on the ration drive by Ibaad ur Rahman
 
 ## Features
 
@@ -40,7 +40,7 @@ Built with [Gatsby](https://www.gatsbyjs.org/) - the blazing-fast static site ge
 
 ## Deploy
 
-Deployed to github pages at [Ibad - Ur - Rahman](https://asharghani.github.io/ibad-ur-rahman-ration-drive/)
+Deployed to github pages at [Ibaad - Ur - Rahman](https://asharghani.github.io/ibad-ur-rahman-ration-drive/)
 
 <!--
 # [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/asharghani/charity-site -->

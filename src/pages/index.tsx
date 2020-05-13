@@ -45,7 +45,7 @@ const IndexPage = () => (
         <StyledSlideShowContainer>
           <SlideShow
             nodeTexts={["Thar", "Chitral", "Karachi", "Ration Package"]}
-            links={["/projectentry/thar-drive", "/projectentry/chitral-drive", "/projectentry/karachi-drive", "/about"]}
+            links={["/projecttype/thar-drive", "/projecttype/chitral-drive", "/projecttype/karachi-drive", "/about"]}
           ></SlideShow>
         </StyledSlideShowContainer>
       </StyledGrid>

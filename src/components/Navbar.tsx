@@ -183,6 +183,11 @@ const Navbar: React.FC = () => (
               <NonLinedMenuItem>All Projects</NonLinedMenuItem>
               <SubMenu>{projectsSubMenuLinks}</SubMenu>
             </MenuItem>
+            <MenuItem>
+              <MenuItemLink to="/contact-us" activeClassName="menu-link-active">
+                Contact Us
+              </MenuItemLink>
+            </MenuItem>
           </Menu>
         </StyledNavbar>
       );

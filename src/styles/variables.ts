@@ -33,8 +33,8 @@ export const colors = {
     light: "#bfe7ff",
   },
   red: {
-    bright: "#ff0000",
-    medium: "#c80000",
+    bright: "#df0000",
+    medium: "#b80000",
     mediumDark: "#900000",
     dark: "#450000",
   },

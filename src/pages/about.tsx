@@ -20,7 +20,13 @@ const IndexPage = () => (
   <IndexLayout>
     <Page>
       <Container>
-        <h1>About the Ration Drive</h1>
+        <h1>Ibaad-ur-Rahman Foundation</h1>
+        <StyledDescription>
+          This is not the work of an individual. It is the work of Allah who put in the hearts of a group of like-minded to come together to
+          serve the underprivileged and improve their own life in the hereafter
+        </StyledDescription>
+
+        <h2>About the Ration Drive</h2>
         <StyledDescription>Monthly Ration for Daily Wage Earner Impacted by COVID-19 Job Loss</StyledDescription>
         <StyledSubHeading>What</StyledSubHeading>
         <StyledDescription>

@@ -48,6 +48,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
   const description = projectEntry.description;
   const descriptionHtml = description && description.childMarkdownRemark.html;
   const startDate = projectEntry.startDate ? new Date(projectEntry.startDate) : undefined;
+  const dateOptions = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
   let journeyHtml: string | undefined;
 
   if (projectEntry.layout && projectEntry.layout.toLowerCase() === "journey") {
@@ -59,7 +60,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
       <Page>
         <StyledContainerDiv>
           <ProjectTitleBreadCrump title={projectEntry.title} parent={projectEntry.parentProject}></ProjectTitleBreadCrump>
-          {startDate && <StyledDate>{startDate.toDateString()}</StyledDate>}
+          {startDate && <StyledDate>{startDate.toLocaleDateString(undefined, dateOptions)}</StyledDate>}
           {/* eslint-disable-next-line react/no-danger */}
           {!journeyHtml && descriptionHtml && (
             <StyledDescription>

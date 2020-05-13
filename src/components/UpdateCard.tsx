@@ -28,6 +28,7 @@ const StyledUpdateCardContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
   max-width: ${getEmSize(breakpoints.lg)}em;
   align-items: flex-start;
@@ -43,12 +44,14 @@ const StyledUpdateCardContainer = styled.div`
 `;
 
 const StyledImage = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   margin: 0 auto;
+  margin-top: 24px;
 
   ${md} {
     margin-left: 24px;
+    margin-top: 0;
   }
 `;
 
@@ -71,8 +74,12 @@ const StyledDescription = styled.span`
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 7;
   margin-bottom: 20px;
+
+  ${md} {
+    -webkit-line-clamp: 5;
+  }
 `;
 
 const StyledProjectLink = styled.div`
@@ -104,11 +111,13 @@ const UpdateCard: React.FC<UpdateCardProps> = function(props: UpdateCardProps) {
     };
   }
 
+  const dateOptions = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+
   return (
     <StyledUpdateCardContainer className={linkClass} {...onClickAttribute}>
       <StyledTitleDescriptionContainer>
         <StyledTitle>{props.title}</StyledTitle>
-        {props.date && <StyledDate>{props.date.toDateString()}</StyledDate>}
+        {props.date && <StyledDate>{props.date.toLocaleDateString(undefined, dateOptions)}</StyledDate>}
         {props.description && <StyledDescription>{props.description}</StyledDescription>}
         {props.link && <StyledProjectLink>View</StyledProjectLink>}
       </StyledTitleDescriptionContainer>
