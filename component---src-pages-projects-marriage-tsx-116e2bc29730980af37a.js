@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{c4Mg:function(n,e,c){"use strict";c.r(e);var t=c("+ego"),u=c("NqE+"),a=c("TBFr"),l=c("qKvR");e.default=function(){return Object(l.d)(t.a,null,Object(l.d)(u.a,null,Object(l.d)(a.a,null,Object(l.d)("h1",null,"Marriage"))))}}}]);
+//# sourceMappingURL=component---src-pages-projects-marriage-tsx-116e2bc29730980af37a.js.map

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{"a+PS":function(n,e,l){"use strict";l.r(e);var t=l("+ego"),u=l("NqE+"),a=l("TBFr"),c=l("qKvR");e.default=function(){return Object(c.d)(t.a,null,Object(c.d)(u.a,null,Object(c.d)(a.a,null,Object(c.d)("h1",null,"Meal ISB"))))}}}]);
+//# sourceMappingURL=component---src-pages-projects-meal-isb-tsx-b82a8dda78d5b7893615.js.map

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{agbu:function(n,u,t){"use strict";t.r(u);var c=t("+ego"),e=t("NqE+"),a=t("TBFr"),l=t("qKvR");u.default=function(){return Object(l.d)(c.a,null,Object(l.d)(e.a,null,Object(l.d)(a.a,null,Object(l.d)("h1",null,"Education"))))}}}]);
+//# sourceMappingURL=component---src-pages-projects-education-tsx-87bf5cfa6ba46cdf0a69.js.map
