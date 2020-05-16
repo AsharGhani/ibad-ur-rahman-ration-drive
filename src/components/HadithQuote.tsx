@@ -1,9 +1,12 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import { themeLight, dimensions } from "../styles/variables";
+import { themeLight, dimensions, breakpoints } from "../styles/variables";
 import { css } from "@emotion/core";
+import { getEmSize } from "../styles/mixins";
 
 const colorTheme = themeLight;
+
+const lg = `@media (min-width: ${getEmSize(breakpoints.lg)}em)`;
 
 const StyledHidthQuoteContainer = styled.div`
   padding-left: 15px;
@@ -14,11 +17,15 @@ const StyledHidthQuoteContainer = styled.div`
 
 const StyledQuoteTitle = styled.div`
   font-family: "Rage Italic", "Lucida Bright", serif;
-  font-size: 8rem;
+  font-size: ${dimensions.headingSizes.huge1}rem;
   color: ${colorTheme.activeItem};
   padding-right: 15px;
   text-align: center;
   margin-bottom: -20px;
+  margin-top: -30px;
+  ${lg} {
+    font-size: 8rem;
+  }
 `;
 
 const StyledHugeQuotes = styled.span`

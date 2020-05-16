@@ -8,11 +8,13 @@ import Container from "./Container";
 import HeaderImage from "./HeaderImage";
 import Navbar from "./Navbar";
 import { getEmSize } from "../styles/mixins";
+import BannerWithImage from "./BannerWithImage";
 
 const colorTheme = themeLight;
 
+const lg = `@media (min-width: ${getEmSize(breakpoints.lg)}em)`;
+
 const StyledHeader = styled.header`
-  padding: 0 ${dimensions.containerPadding}rem;
   color: ${transparentize(0.5, colors.white)};
 `;
 
@@ -27,8 +29,9 @@ const HeaderInner = styled(Container)`
 `;
 
 const HomepageLink = styled(Link)`
+  padding-left: ${dimensions.containerPadding}rem;
   color: ${colorTheme.headerText};
-  font-size: ${dimensions.headingSizes.h1}rem;
+  font-size: ${dimensions.headingSizes.h2}rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,6 +41,10 @@ const HomepageLink = styled(Link)`
   &:hover,
   &:focus {
     text-decoration: none;
+  }
+
+  ${lg} {
+    font-size: ${dimensions.headingSizes.h1}rem;
   }
 `;
 
@@ -67,11 +74,11 @@ const Header: React.FC<HeaderProps> = ({ title, secondaryTitle }) => (
           <HeaderImage />
           {title}
         </HomepageLink>
-        <SecondaryTitleContainer>{secondaryTitle}</SecondaryTitleContainer>
         <NavBarContainer>
           <Navbar></Navbar>
         </NavBarContainer>
       </HeaderInner>
+      <BannerWithImage />
     </StyledHeader>
   </>
 );

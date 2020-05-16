@@ -113,6 +113,7 @@ export const dimensions = {
     small: 14,
     regular: 16,
     large: 18,
+    xlarge: 20,
   },
   headingSizes: {
     h1: 2.441,
@@ -121,6 +122,7 @@ export const dimensions = {
     h4: 1.25,
     huge1: 5,
     huge2: 4,
+    huge3: 3,
   },
   lineHeight: {
     regular: 1.45,
