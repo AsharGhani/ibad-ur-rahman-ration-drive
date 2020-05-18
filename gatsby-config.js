@@ -66,5 +66,12 @@ module.exports = {
         accessToken: "0vUyk5SenAu7JRSkJnAlVg6aW1Rfq4dIYz2BkajvemE",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-167029667-1",
+      },
+    },
   ],
 };

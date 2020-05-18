@@ -33,6 +33,20 @@
     text-align: center;
     font-size: 1.2rem;
   }
+
+  .float-right {
+    margin-bottom: 24px;
+    @media (min-width: 992px) {
+      float: right;
+    }
+  }
+
+  .float-left {
+    margin-bottom: 24px;
+    @media (min-width: 992px) {
+      float: left;
+    }
+  }
 }
 
 .project-entry-journey > p {
@@ -48,13 +62,15 @@
 .project-entry-journey > p > img {
   margin: 0 auto;
   display: block;
-  max-width: 70vw;
   max-height: 70vh;
   padding: 0px 16px;
 
-  @media (min-width: 1200px) {
-    max-width: 30vw;
-    max-height: 30vh;
+  @media (min-width: 724px) {
+    max-height: 60vh;
+  }
+
+  @media (min-width: 992px) {
+    max-height: 40vh;
   }
 }
 
