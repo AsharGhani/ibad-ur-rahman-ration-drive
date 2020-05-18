@@ -3,6 +3,8 @@
 > A site for the charity organization "Ibaad ur Rahmand Foundation" that provides services for clean water, poverty alleviation
 > health care, Marriage Support, Education, Food. This version of the site focuses on the ration drive by Ibaad ur Rahman
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/008bf248-0acf-48ae-8ab8-35e211034c4b/deploy-status)](https://app.netlify.com/sites/ibaad-ur-rahman-ration-drive/deploys)
+
 ## Features
 
 - TypeScript

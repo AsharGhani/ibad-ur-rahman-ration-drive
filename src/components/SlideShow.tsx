@@ -42,15 +42,8 @@ const StyledNodeButton = styled.div`
   }
 `;
 
-interface childImageSharpNode {
-  name: string;
-  childImageSharp: {
-    fluid: any;
-  };
-}
-
 interface SlideShowComponentProps {
-  nodes: childImageSharpNode[];
+  nodes: ChildImageSharpNode[];
   nodeTexts: string[];
   links: string[];
 }
@@ -73,7 +66,7 @@ class SlideShowComponent extends React.Component<SlideShowComponentProps, SlideS
   render() {
     const images: any[] = [];
 
-    const sortedNodes = this.props.nodes.sort((node1: childImageSharpNode, node2: childImageSharpNode) =>
+    const sortedNodes = this.props.nodes.sort((node1: ChildImageSharpNode, node2: ChildImageSharpNode) =>
       node1.name.localeCompare(node2.name),
     );
 
@@ -81,7 +74,7 @@ class SlideShowComponent extends React.Component<SlideShowComponentProps, SlideS
       images.push(
         <div>
           <Link to={this.props.links[i]}>
-            <Img fluid={node.childImageSharp.fluid} alt="Image" key={node.name}></Img>
+            <Img fluid={node.childImageSharp.fluid} alt={node.name} key={node.name}></Img>
           </Link>
         </div>,
       );
@@ -128,7 +121,7 @@ class SlideShowComponent extends React.Component<SlideShowComponentProps, SlideS
 
 interface StaticQueryProps {
   allFile: {
-    nodes: childImageSharpNode[];
+    nodes: ChildImageSharpNode[];
   };
 }
 

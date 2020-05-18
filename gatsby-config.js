@@ -2,7 +2,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Ibad - ur - Rahman",
+    title: "Ibaad - ur - Rahman",
     description: "Ration Drive",
     keywords: "charity, humanity, clean, water, poverty, alleviation, education, food, health care",
     siteUrl: "https://asharghani.github.io/ibad-ur-rahman-ration-drive/",
