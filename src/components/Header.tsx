@@ -23,7 +23,6 @@ const HeaderInner = styled(Container)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100%;
   margin-top: 10px;
   flex-wrap: wrap;
 `;

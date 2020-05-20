@@ -20,6 +20,7 @@ interface StaticQueryProps {
 const StyledBannerImageContainer = styled.div`
   display: grid;
   grid-template-areas: "a";
+  -ms-grid-template-areas: "a";
   height: 60px;
   width: 100vw;
 
@@ -32,12 +33,19 @@ const StyledBannerImage = styled(Img)`
   width: 100%;
   height: 100%;
   grid-area: a;
+  -ms-grid-area: a;
+  max-height: 60px;
+
+  ${lg} {
+    max-height: 120px;
+  }
 `;
 
 const StyledBannerText = styled.div`
   width: 100%;
   height: 100%;
   grid-area: a;
+  -ms-grid-area: a;
   text-align: center;
   z-index: 2;
   font-size: ${dimensions.headingSizes.h3}rem;
@@ -57,6 +65,7 @@ const StyledBannerTextInner = styled.div`
   background: rgba(0, 0, 0, 0.5);
   padding: 0 32px;
   border-radius: 4px;
+  z-index: 3;
 `;
 
 const BannerWithImage: React.FC = () => (
