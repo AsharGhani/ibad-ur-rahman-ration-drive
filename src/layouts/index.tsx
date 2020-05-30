@@ -43,6 +43,7 @@ const IndexLayout: React.FC = ({ children }) => (
         />
         <Header title={data.site.siteMetadata.title} secondaryTitle={data.site.siteMetadata.description} />
         <LayoutMain>{children}</LayoutMain>
+        <footer id="footer"></footer>
       </LayoutRoot>
     )}
   />

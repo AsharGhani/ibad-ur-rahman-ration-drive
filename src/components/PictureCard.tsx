@@ -19,7 +19,7 @@ const StyledPictureCardContainer = styled.div`
   flex-direction: column;
   width: 300px;
   align-items: center;
-  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
   padding: 16px;
 `;
 

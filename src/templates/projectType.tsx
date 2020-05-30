@@ -9,6 +9,7 @@ import ProjectTitleBreadCrump from "../components/ProjectTitleBreadCrumb";
 import { getEmSize } from "../styles/mixins";
 import { widths, breakpoints } from "../styles/variables";
 import UpdateCard from "../components/UpdateCard";
+import { StyledLinkButton, ContentsCentered } from "../styles/styledComponents";
 
 const xl = `@media (min-width: ${getEmSize(breakpoints.xl)}em)`;
 
@@ -59,10 +60,21 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
     }
   }
 
+  let goToStartButton: React.ReactNode;
   if (projectType.childProjectsList) {
     const sortedProjectsList = projectType.childProjectsList.sort((projectA, projectB) =>
       projectA.startDate < projectB.startDate ? 1 : -1,
     );
+
+    if (projectType.layout && projectType.layout === "UpdatesList") {
+      goToStartButton = (
+        <ContentsCentered>
+          <a href={"#footer"}>
+            <StyledLinkButton style={{ width: "auto" }}>Go to the first update</StyledLinkButton>
+          </a>
+        </ContentsCentered>
+      );
+    }
 
     for (const childProjectEntry of sortedProjectsList) {
       let link: string | undefined;
@@ -113,6 +125,7 @@ const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => {
               <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
             </StyledDescription>
           )}
+          {goToStartButton}
           <StyledChildLinksContainer>
             {childProjectTypeCards}
             {childProjectEntryCards}

@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { themeLight, dimensions, breakpoints } from "../styles/variables";
 import { navigate } from "gatsby";
 import { getEmSize } from "../styles/mixins";
+import { StyledLinkButton } from "../styles/styledComponents";
 
 const colorTheme = themeLight;
 
@@ -82,26 +83,6 @@ const StyledDescription = styled.span`
   }
 `;
 
-const StyledProjectLink = styled.div`
-  text-align: center;
-  background: ${colorTheme.button};
-  color: ${colorTheme.buttonText};
-  font-size: ${dimensions.fontSize.small}px;
-  text-decoration: none;
-  padding: 4px 8px;
-  width: 120px;
-  margin: 0px auto;
-  &:focus,
-  &:hover {
-    background: ${colorTheme.buttonHover};
-    text-decoration: none;
-  }
-
-  ${md} {
-    margin: 0;
-  }
-`;
-
 const UpdateCard: React.FC<UpdateCardProps> = function(props: UpdateCardProps) {
   const linkClass = props.link ? "link" : "";
   let onClickAttribute;
@@ -119,7 +100,7 @@ const UpdateCard: React.FC<UpdateCardProps> = function(props: UpdateCardProps) {
         <StyledTitle>{props.title}</StyledTitle>
         {props.date && <StyledDate>{props.date.toLocaleDateString(undefined, dateOptions)}</StyledDate>}
         {props.description && <StyledDescription>{props.description}</StyledDescription>}
-        {props.link && <StyledProjectLink>View</StyledProjectLink>}
+        {props.link && <StyledLinkButton>View</StyledLinkButton>}
       </StyledTitleDescriptionContainer>
       {props.imageSrc && <StyledImage src={props.imageSrc} title={props.imageTitle} width="300px" height="300px"></StyledImage>}
     </StyledUpdateCardContainer>
